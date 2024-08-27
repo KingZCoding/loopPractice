@@ -38,7 +38,23 @@ for (let i = 0; i < catss.length; i++) {
 //}
 
 console.log(myFavoriteCats)
+//writing this with a while loop instead of a for loop
+const catsss = ["Pete", "Biggles", "Jasmine"];
+let myFavoriteCatss = "My cats are called ";
 
+let i = 0 
+
+while (i < catsss.length) {
+    if (i === catsss.length - 1) {
+        myFavoriteCatss += `and ${catsss[i]}.`;
+    } else {
+        myFavoriteCatss += `${catsss[i]}, `;
+    }
+
+    i++;
+}
+
+console.log(myFavoriteCatss);
 
 const contacts = [
     "Chris:2232322",
@@ -68,3 +84,47 @@ btn.addEventListener("click", () => {
         para.textContent = "Contact not found.";
     }
 });
+
+const pars = document.querySelector("p");
+const inputs = document.querySelector("input");
+const btns = document.querySelector("button")
+
+btns.addEventListener("click", () => {
+    pars.textContent = "Output";
+    const num = inputs.value;
+    inputs.value = "";
+    inputs.focus();
+    for (let i = 1; i <= num; i++) {
+        let sqRoot = Math.sqrt(i);
+        if (Math.floor(sqRoot) !== sqRoot){
+            continue;
+        }
+        pars.textContent += `${1}`;
+    }
+});
+
+
+
+
+//Active learnin: Launch countdown from MDN
+const output = document.querySelector(`.output`);
+output.textContent = "";
+
+let c = 10;
+
+while (c >= 0) {
+    const para = document.createElement('p');
+    if (c === 10) {
+        para.textContent = `Countdown ${c}`;
+    }else if (c === 0) {
+        para.textContent = 'Blast Off!';
+    } else {
+        para.textContent = c;
+    }
+    output.appendChild(para);
+
+    c--;
+}
+
+
+
